@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مدرسة عبد الوهاب القرطاس</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef3ff;--card:#fff;--ink:#14204f;--mut:#5a678f;--pri:#2b4fd8;--navy:#0d1b5e;--gold:#f5c04a;--line:#d5def5;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1238;--card:#16214f;--ink:#eef2ff;--mut:#a9b6e6;--line:#2a3a7a}}
+:root[data-theme="dark"]{--bg:#0b1238;--card:#16214f;--ink:#eef2ff;--mut:#a9b6e6;--line:#2a3a7a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Cairo',Tahoma,sans-serif;background:var(--bg);color:var(--ink)}
+header{background:linear-gradient(135deg,#0d1b5e,#2b4fd8);color:#fff;padding:14px 16px;display:flex;align-items:center;gap:12px}
+header svg{width:54px;flex:none;border-radius:6px}
+header h1{margin:0;font-size:22px;font-weight:900;line-height:1.3}
+header p{margin:0;font-size:13px;color:#cfe0ff}
+nav{display:flex;gap:6px;padding:8px;overflow-x:auto;background:var(--card);border-bottom:2px solid var(--line);position:sticky;top:0;z-index:5}
+nav button,.tabs button{font:700 15px Cairo,sans-serif;border:2px solid var(--line);background:var(--card);color:var(--ink);padding:8px 14px;border-radius:30px;white-space:nowrap;cursor:pointer}
+nav button.on,.tabs button.on,.chip.on{background:var(--pri);color:#fff;border-color:var(--pri)}
+main{max-width:1280px;margin:0 auto;padding:14px}
+.pg{display:none}.pg.on{display:block}
+.card{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:14px;margin-bottom:14px}
+h2{margin:0 0 10px;font-size:20px}
+.hero{background:linear-gradient(135deg,#0d1b5e,#3a5cff);color:#fff;border-radius:24px;padding:22px;text-align:center}
+.hero h2{font-size:26px;margin:0 0 6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.tile{border:0;border-radius:18px;padding:16px 8px;color:#fff;font:900 16px Cairo,sans-serif;cursor:pointer;display:block;width:100%}
+.tile span{display:block;font-size:34px;margin-bottom:4px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+textarea,input[type=text]{width:100%;font:500 16px Cairo,sans-serif;padding:10px;border:2px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink)}
+.btn{font:900 18px Cairo,sans-serif;border:0;border-radius:16px;padding:12px 22px;background:var(--pri);color:#fff;cursor:pointer;box-shadow:0 4px 0 #1a2f9a}
+.btn.s{font-size:14px;padding:8px 14px;box-shadow:none;background:#7a86b8}
+.big{font-size:34px;font-weight:900;text-align:center;min-height:64px;padding:12px;margin:12px 0;color:var(--pri);word-break:break-word}
+.big.done{animation:pp .5s}
+@keyframes pp{50%{transform:scale(1.3)}}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}
+.ctr{text-align:center}
+#whl{max-width:100%;touch-action:none}
+@keyframes pop{0%{transform:translateY(0) scale(.3);opacity:0}25%{opacity:1}100%{transform:translateY(var(--y)) translateX(var(--x)) rotate(var(--r)) scale(1);opacity:1}}
+.chip{font:700 14px Cairo,sans-serif;border:2px solid var(--line);background:var(--card);color:var(--ink);padding:6px 14px;border-radius:30px;cursor:pointer}
+.res{display:flex;justify-content:space-between;gap:8px;padding:8px 12px;border:2px solid var(--line);border-radius:12px;margin:6px 0;align-items:center}
+.res a{color:var(--pri);font-weight:700;word-break:break-all}
+.x{background:none;border:0;color:#d9262c;font-size:18px;cursor:pointer}
+.cf{position:fixed;top:-30px;font-size:26px;pointer-events:none;animation:fall linear forwards;z-index:20}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+.stage{position:relative;height:480px;overflow:hidden;border-radius:22px;background:radial-gradient(ellipse at 50% 110%,#5b7bff,#16227a 55%,#0b1238);margin:8px 0;border:3px solid var(--gold)}
+.stage:before{content:"";position:absolute;inset:0;background-image:radial-gradient(2px 2px at 20px 30px,#fff,transparent),radial-gradient(1.5px 1.5px at 90px 80px,#fff9,transparent),radial-gradient(2px 2px at 160px 20px,#ffe9a8,transparent);background-size:180px 120px;opacity:.7}
+.mach{position:absolute;left:50%;bottom:0;width:230px;height:330px;margin-left:-115px;transform-origin:50% 100%;filter:drop-shadow(0 8px 14px #0008)}
+.mach svg{position:absolute;inset:0}
+.glass{position:absolute;left:36px;top:58px;width:158px;height:140px;overflow:hidden;border-radius:6px}
+.glass span{position:absolute;font-size:24px}
+.shake{animation:shk .12s infinite}
+@keyframes shk{0%{transform:translate(-2px,0) rotate(-1deg)}50%{transform:translate(2px,-2px) rotate(1deg)}100%{transform:translate(-2px,1px) rotate(-1deg)}}
+.bulb{animation:bl .7s infinite alternate}.bulb:nth-child(odd){animation-delay:.35s}
+@keyframes bl{from{fill:#fff3a0}to{fill:#c98a00}}
+#fly{position:absolute;inset:0;pointer-events:none}
+#fly>*{position:absolute;will-change:transform}
+.chip2{padding:5px 12px;border-radius:30px;color:#fff;font-weight:900;font-size:16px;white-space:nowrap;box-shadow:0 3px 8px #0006;border:2px solid #fff}
+.w{position:absolute;left:50%;top:34%;transform:translate(-50%,-50%);background:linear-gradient(#fff7d6,#ffd36b);border:4px solid #f5c04a;border-radius:24px;padding:14px 26px;font-size:34px;font-weight:900;color:#7a3b00;text-align:center;box-shadow:0 0 60px #ffd36b;animation:pp2 .8s cubic-bezier(.2,1.4,.4,1);max-width:92%;word-break:break-word}
+@keyframes pp2{from{transform:translate(-50%,-50%) scale(0) rotate(-12deg)}}
+.flagbar{height:14px;border-radius:8px;background:linear-gradient(90deg,#1a9a4a 0 25%,#fff 25% 50%,#d9262c 50% 75%,#111 75%);margin-bottom:10px;border:1px solid var(--line)}
+.wbtop{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-size:18px}
+.wbwrap{position:relative;background:#fff;border:3px solid var(--line);border-radius:16px;overflow:hidden;touch-action:none;box-shadow:0 6px 18px #0002}
+.wbwrap.bg-g{background-image:linear-gradient(#d3ddf5 1px,transparent 1px),linear-gradient(90deg,#d3ddf5 1px,transparent 1px);background-size:32px 32px}
+.wbwrap.bg-d{background-image:radial-gradient(#9fb0e0 1.5px,transparent 1.6px);background-size:28px 28px}
+.wbwrap.bg-l{background-image:linear-gradient(#cfdaf6 1px,transparent 1px);background-size:100% 36px}
+#wb{display:block;width:100%;height:auto;cursor:crosshair;touch-action:none}
+#layer{position:absolute;inset:0;pointer-events:none}
+#layer>*{pointer-events:auto}
+.note2,.tbox{position:absolute;min-width:130px;box-shadow:0 4px 12px #0003;border-radius:8px;color:#14204f}
+.note2{width:190px;min-height:130px}
+.tbox{background:#fffffff0;border:1.5px dashed #9fb0e0;font-size:26px}
+.hd{display:flex;justify-content:space-between;align-items:center;padding:2px 6px;cursor:move;font-size:13px;background:#0001;border-radius:8px 8px 0 0;touch-action:none}
+.hd button{border:0;background:none;cursor:pointer;color:#a3121a;font-size:14px}
+.bd{padding:6px 8px;outline:none;min-height:40px;font-size:18px}
+.bar{position:absolute;left:50%;top:10px;transform:translateX(-50%);display:flex;gap:2px;align-items:center;background:#fff;border:1px solid #cfd6ea;border-radius:30px;padding:5px 8px;box-shadow:0 6px 20px #0003;max-width:96%;overflow-x:auto;z-index:6;direction:ltr}
+.bar button{position:relative;border:0;background:none;width:40px;height:40px;border-radius:12px;font-size:20px;cursor:pointer;color:#14204f;flex:none}
+.bar button.on{background:#dbe8ff}
+.bar button i{position:absolute;left:9px;right:9px;bottom:3px;height:4px;border-radius:3px}
+.sep{width:1px;height:26px;background:#d5def5;margin:0 4px;flex:none}
+.pop{display:none;position:absolute;left:50%;top:68px;transform:translateX(-50%);background:#fff;border:1px solid #cfd6ea;border-radius:16px;padding:10px;box-shadow:0 8px 24px #0004;z-index:7;max-width:94%;color:#14204f;text-align:center}
+.pop .sw{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-bottom:8px}
+.pop .sw button{width:28px;height:28px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px #cfd6ea;cursor:pointer;padding:0}
+.pop .sw button.on{box-shadow:0 0 0 3px #0f6cbd}
+.pop .chip{color:#14204f;background:#fff;margin:2px}
+.wbwrap:fullscreen{display:flex;align-items:center;justify-content:center}
+.ov{position:absolute;touch-action:none;cursor:move;user-select:none;z-index:3}
+#ruler{width:440px;height:48px;left:24px;top:24px;display:none;background:#ffe27acc;border:2px solid #b8860b;border-radius:6px;background-image:repeating-linear-gradient(90deg,#7a5200 0 1px,transparent 1px 11px);background-size:100% 14px;background-repeat:repeat-x}
+#prot{display:none;left:70px;top:90px;width:300px;height:160px}
+.ptxt{white-space:pre-wrap;background:var(--bg);border:2px dashed var(--line);border-radius:12px;padding:10px;line-height:1.9;font-size:15px;margin:8px 0}
+.tg{display:inline-block;background:var(--pri);color:#fff;border-radius:20px;padding:2px 10px;font-size:12px;font-weight:700;margin-inline-start:6px}
+.ul{margin:6px 0;padding-inline-start:20px;line-height:1.9}
+.cr{margin-top:14px;background:linear-gradient(#fff7dc,#ffe9a8);color:#2a1d05;border:3px solid #d69a1f;border-radius:22px;padding:14px;text-align:center;box-shadow:0 4px 12px #0003}
+.crt{font-weight:700;font-size:15px;color:#7a3b00}.crn{font-weight:900;font-size:24px;color:#0d1b5e;margin-bottom:10px}
+.crg{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.crg div{background:#fff;border:2px solid #f5c04a;border-radius:14px;padding:8px;font-weight:900;color:#0d1b5e}
+.crg span{display:block;font-size:12px;color:#7a3b00;font-weight:700}
+footer{text-align:center;color:var(--mut);font-size:13px;padding:18px}
+</style>
+</head>
+<body>
+<header>
+  <svg viewBox="0 0 60 40"><rect width="60" height="14" fill="#1a9a4a"/><rect y="13" width="60" height="14" fill="#fff"/><rect y="26" width="60" height="14" fill="#d9262c"/><polygon points="0,0 16,13 16,27 0,40" fill="#111"/></svg>
+  <div><h1>مدرسة عبد الوهاب القرطاس</h1><p>بوابة المعلمة • أدوات التحفيز والتعلّم 🌟</p></div>
+</header>
+<nav id="nav">
+  <button data-p="home" class="on">🏠 الرئيسية</button>
+  <button data-p="tools">🎲 أدوات التحفيز</button>
+  <button data-p="board">🧮 السبورة</button>
+  <button data-p="subj">📚 المواد</button>
+  <button data-p="grades">🎒 الصفوف</button>
+  <button data-p="lib">🤖 مكتبة الذكاء الاصطناعي</button>
+</nav>
+<main>
+<section id="home" class="pg on">
+  <div class="hero"><h2>أهلًا بكم في مدرسة عبد الوهاب القرطاس 💙</h2><div>أدوات ممتعة تُحفّز الطلاب وتُسهّل على المعلمة حصّتها</div></div>
+  <div class="grid" style="margin-top:14px">
+    <button class="tile" style="background:#2b4fd8" data-go="tools"><span>🎡</span>العجلة والفشار والاختيار</button>
+    <button class="tile" style="background:#7a3cff" data-go="board"><span>🧮</span>السبورة وأدوات الرياضيات</button>
+    <button class="tile" style="background:#1a9a4a" data-go="subj"><span>📚</span>المواد الدراسية</button>
+    <button class="tile" style="background:#d9262c" data-go="grades"><span>🎒</span>الصفوف</button>
+    <button class="tile" style="background:#0e9aa7" data-go="lib"><span>🤖</span>مكتبة الذكاء الاصطناعي</button>
+  </div>
+</section>
+
+<section id="tools" class="pg">
+  <div class="card"><h2>👥 أسماء الطلاب</h2>
+    <textarea id="names" rows="4" placeholder="اكتبي اسمًا في كل سطر..."></textarea>
+    <div class="row"><label><input type="checkbox" id="nr" checked> عدم تكرار الاسم المختار</label><button class="btn s" id="rs">↻ إعادة القائمة</button><span id="cnt" style="color:var(--mut)"></span></div>
+  </div>
+  <div class="tabs" id="tt"><button data-t="pk" class="on">🎯 اختيار عشوائي</button><button data-t="wh">🎡 العجلة</button><button data-t="pc">🍿 آلة الفشار</button><button data-t="ss">🕵️ الطالب السري</button></div>
+  <div class="card ctr tp" id="pk"><div class="big" id="pkout">؟</div><button class="btn" id="pkb">اختاري طالبًا 🎯</button></div>
+  <div class="card ctr tp" id="wh" style="display:none"><canvas id="whl" width="340" height="340"></canvas><div class="big" id="whout"></div><button class="btn" id="whb">لفّي العجلة 🎡</button></div>
+  <div class="card ctr tp" id="pc" style="display:none"><div class="stage" id="stage"><div class="mach" id="mach"><svg viewBox="0 0 230 330" width="230" height="330"><defs><linearGradient id="rg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8343a"/><stop offset="1" stop-color="#a3121a"/></linearGradient></defs><rect x="14" y="2" width="202" height="48" rx="12" fill="url(#rg)" stroke="#f5c04a" stroke-width="4"/><text x="115" y="36" text-anchor="middle" font-size="26" font-weight="900" fill="#fff" font-family="Cairo,sans-serif">POPCORN</text><circle class="bulb" cx="30" cy="9" r="3.5"/><circle class="bulb" cx="52" cy="9" r="3.5"/><circle class="bulb" cx="74" cy="9" r="3.5"/><circle class="bulb" cx="96" cy="9" r="3.5"/><circle class="bulb" cx="118" cy="9" r="3.5"/><circle class="bulb" cx="140" cy="9" r="3.5"/><circle class="bulb" cx="162" cy="9" r="3.5"/><circle class="bulb" cx="184" cy="9" r="3.5"/><circle class="bulb" cx="206" cy="9" r="3.5"/><rect x="30" y="52" width="170" height="150" rx="8" fill="#cfe8ff" fill-opacity=".25" stroke="#f5c04a" stroke-width="5"/><path d="M92 58h46l9 28H83z" fill="#b9c2d6" stroke="#6b7694" stroke-width="2"/><rect x="38" y="190" width="154" height="7" rx="3" fill="#ff9a3c"/><rect x="14" y="204" width="202" height="100" rx="12" fill="url(#rg)" stroke="#f5c04a" stroke-width="4"/><rect x="34" y="222" width="162" height="62" rx="10" fill="#fff4d6" stroke="#f5c04a" stroke-width="3"/><text x="115" y="268" text-anchor="middle" font-size="40">🍿</text><circle cx="56" cy="314" r="14" fill="#222"/><circle cx="56" cy="314" r="5" fill="#f5c04a"/><circle cx="174" cy="314" r="14" fill="#222"/><circle cx="174" cy="314" r="5" fill="#f5c04a"/></svg><div class="glass" id="glass"></div></div><div id="fly"></div><div id="win"></div></div><button class="btn" id="pcb">فقّعي الفشار 🍿</button></div><div class="card ctr tp" id="ss" style="display:none"><div class="flagbar"></div><div class="big" id="ssout"></div>
+<div class="row" id="ssb1" style="justify-content:center"><button class="btn" id="ssp">🕵️ اختاري الطالب السري</button></div>
+<div class="row" id="ssb2" style="justify-content:center"><button class="btn s" id="ssk">👁 اضغطي مطوّلًا لتري الاسم</button><button class="btn" id="ssr" style="background:#1a9a4a;box-shadow:0 4px 0 #0b5a26">🎬 كشف الطالب السري</button></div>
+<div class="row" id="ssb3" style="justify-content:center"><button class="btn" id="ssy" style="background:#1a9a4a;box-shadow:0 4px 0 #0b5a26">✅ التزم الطالب</button><button class="btn" id="ssn" style="background:#d9262c;box-shadow:0 4px 0 #8a1218">❌ لم يلتزم</button></div>
+<div class="flagbar" style="margin-top:12px"></div><div class="row" style="justify-content:center;font-weight:900;font-size:18px">⭐ نجوم الصف: <span id="sst">0</span> <button class="btn s" id="ssz">تصفير</button></div>
+<div style="color:var(--mut);font-size:13px">اختاري الطالب سرًّا في بداية الحصة، وإن التزم طوال الحصة يربح الصف النجوم.</div></div>
+</section>
+
+<section id="board" class="pg">
+<div class="wbtop"><b>🧮 السبورة التفاعلية</b><div class="row" style="margin:0"><span style="color:var(--mut);font-size:13px">اضغطي على القلم مرة ثانية لتغيير اللون والسُّمك</span><button class="btn s" id="clr2" style="background:#d9262c">🗑 مسح الكل</button></div></div>
+<div class="wbwrap" id="wbw"><canvas id="wb" width="1280" height="720"></canvas><div id="layer"></div><div class="ov" id="ruler"></div><svg class="ov" id="prot" viewBox="0 0 280 150"></svg><div class="pop" id="pop"></div><div class="bar" id="bar"><button data-t="p1" class="on" title="قلم"><span>✏️</span><i style="background:#111111"></i></button><button data-t="p2" title="قلم أزرق"><span>✏️</span><i style="background:#2b4fd8"></i></button><button data-t="p3" title="قلم أحمر"><span>✏️</span><i style="background:#d9262c"></i></button><button data-t="hl" title="قلم تظليل"><span>🖍️</span><i style="background:#ffe14d"></i></button><button data-t="er" title="ممحاة"><span>🧽</span></button><span class="sep"></span><button data-t="sh" title="أشكال"><span>⬡</span></button><button data-t="tx" title="نص"><span>🔤</span></button><button data-t="nt" title="ورقة لاصقة"><span>🗒️</span></button><button data-t="sy" title="رموز رياضية"><span>∑</span></button><span class="sep"></span><button data-t="ru" title="مسطرة (نقرة مزدوجة للتدوير)"><span>📏</span></button><button data-t="pt" title="منقلة"><span>◠</span></button><span class="sep"></span><button data-t="un" title="تراجع"><span>↶</span></button><button data-t="re" title="إعادة"><span>↷</span></button><button data-t="cl" title="مسح الكل"><span>🗑</span></button><button data-t="bg" title="الخلفية"><span>▦</span></button><button data-t="fs" title="ملء الشاشة"><span>⤢</span></button></div></div>
+</section>
+
+<section id="subj" class="pg"><div class="card"><h2>📥 كتب بحاجة لتصنيف</h2><div id="unc"></div></div><div class="grid" id="sg"></div><div id="sp"></div></section>
+<section id="grades" class="pg"><div class="grid" id="gg"></div><div id="gp"></div></section>
+<section id="lib" class="pg">
+  <div class="hero" style="margin-bottom:14px"><h2>🤖 مكتبة الذكاء الاصطناعي للمعلمة</h2><div>برومبتات جاهزة للفيديو وأوراق العمل والألعاب، وشرح للأدوات</div></div>
+  <div class="card"><b>✍️ اكتبي بيانات درسك مرة واحدة، فتُملأ كل البرومبتات تلقائيًا:</b>
+    <div class="row"><input type="text" id="vM" placeholder="المادة (مثال: الرياضيات)" style="flex:1 1 150px"><input type="text" id="vG" placeholder="الصف (مثال: الرابع)" style="flex:1 1 120px"><input type="text" id="vL" placeholder="عنوان الدرس (مثال: المحيط)" style="flex:1 1 170px"></div>
+    <div class="tabs" id="lt"></div></div>
+  <div id="lb"></div>
+</section>
+</main>
+<footer>مدرسة عبد الوهاب القرطاس • دولة الكويت 🇰🇼<div style="font-size:11px;margin-top:6px;line-height:1.8;opacity:.85">إعداد وتقديم المعلمة: د/ نجوى عبد التواب<br>تحت إشراف: رئيسة القسم أ/ هيا العتيبي • الموجهة الفنية أ/ عذاري الفيلكاوي • المديرة المساعدة أ/ حنان الخالدي • مديرة المدرسة أ/ سعاد العازمي</div></footer>
+
+<script>
+var $=function(i){return document.getElementById(i)};
+function ls(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+/* ---- nav ---- */
+function go(p){document.querySelectorAll('.pg').forEach(function(s){s.classList.toggle('on',s.id===p)});document.querySelectorAll('#nav button').forEach(function(b){b.classList.toggle('on',b.dataset.p===p)});if(p==='board'&&window.sizeBoard)sizeBoard();window.scrollTo(0,0)}
+document.querySelectorAll('#nav button').forEach(function(b){b.onclick=function(){go(b.dataset.p)}});
+document.querySelectorAll('[data-go]').forEach(function(b){b.onclick=function(){go(b.dataset.go)}});
+function conf(){var e=['⭐','✨','🎉','🌟','💙'];for(var i=0;i<24;i++)(function(i){setTimeout(function(){var s=document.createElement('span');s.className='cf';s.textContent=e[i%5];s.style.left=Math.random()*95+'vw';s.style.animationDuration=(2+Math.random()*2)+'s';document.body.appendChild(s);setTimeout(function(){s.remove()},4500)},i*70)})(i)}
+/* ---- names ---- */
+var used=[];
+$('names').value=ls('names')||'';
+function all(){return $('names').value.split('\n').map(function(x){return x.trim()}).filter(Boolean)}
+function avail(){var a=all();if($('nr').checked)a=a.filter(function(x){return used.indexOf(x)<0});$('cnt').textContent=all().length?('المتاح: '+a.length+' من '+all().length):'';if(!a.length){$('cnt').textContent=all().length?'انتهت الأسماء، اضغطي «إعادة القائمة»':'اكتبي الأسماء أولًا';return[]}return a}
+$('names').oninput=function(){ls('names',$('names').value);avail()};
+$('rs').onclick=function(){used=[];avail()};
+document.querySelectorAll('#tt button').forEach(function(b){b.onclick=function(){document.querySelectorAll('#tt button').forEach(function(x){x.classList.toggle('on',x===b)});document.querySelectorAll('.tp').forEach(function(p){p.style.display=p.id===b.dataset.t?'block':'none'})}});
+function pick(a){return a[Math.floor(Math.random()*a.length)]}
+/* ---- random picker ---- */
+$('pkb').onclick=function(){var a=avail();if(!a.length)return;var o=$('pkout'),t=0;o.className='big';var iv=setInterval(function(){o.textContent=pick(a);if(++t>22){clearInterval(iv);var n=pick(a);o.textContent=n;o.className='big done';used.push(n);avail();conf()}},90)};
+/* ---- wheel ---- */
+var wc=$('whl'),wx=wc.getContext('2d'),ang=0,spin=false;
+function wdraw(){var a=all();if(!a.length)a=['أضيفي','أسماء','الطلاب'];var n=a.length,sg=2*Math.PI/n,R=165;wx.clearRect(0,0,340,340);wx.save();wx.translate(170,176);wx.rotate(ang);
+  for(var i=0;i<n;i++){wx.beginPath();wx.moveTo(0,0);wx.arc(0,0,R,i*sg,(i+1)*sg);wx.fillStyle='hsl('+(i*360/n)+',75%,55%)';wx.fill();wx.strokeStyle='#fff';wx.lineWidth=2;wx.stroke();
+    wx.save();wx.rotate(i*sg+sg/2);wx.fillStyle='#fff';wx.font='bold '+(n>14?11:16)+'px Cairo,sans-serif';wx.textAlign='right';wx.fillText(a[i].slice(0,14),R-12,5);wx.restore()}
+  wx.restore();wx.beginPath();wx.arc(170,176,18,0,7);wx.fillStyle='#fff';wx.fill();wx.strokeStyle='#0d1b5e';wx.lineWidth=4;wx.stroke();
+  wx.beginPath();wx.moveTo(170,2);wx.lineTo(158,26);wx.lineTo(182,26);wx.fillStyle='#d9262c';wx.fill()}
+wdraw();$('names').addEventListener('input',function(){if(!spin)wdraw()});
+$('whb').onclick=function(){if(spin)return;var a=avail();if(!a.length)return;
+  var all0=all(),pool=a;spin=true;var total=Math.PI*2*(5+Math.random()*3)+Math.random()*6.28,s0=ang,t0=performance.now(),D=4200;
+  (function f(now){var t=Math.min(1,(now-t0)/D),e=1-Math.pow(1-t,3);ang=s0+total*e;wdraw();
+    if(t<1)requestAnimationFrame(f);else{spin=false;var n=all0.length,sg=2*Math.PI/n,x=((-Math.PI/2-ang)%(2*Math.PI)+2*Math.PI)%(2*Math.PI),w=all0[Math.floor(x/sg)%n];
+      $('whout').textContent='🎉 '+w;$('whout').className='big done';used.push(w);avail();conf()}})(t0)};
+/* ---- popcorn ---- */
+var busy=false,AC=null,COL=['#e8343a','#2b4fd8','#1a9a4a','#f59e0b','#7a3cff','#e0457b','#0e9aa7'];
+function snd(f,d,t){try{AC=AC||new (window.AudioContext||window.webkitAudioContext)();var o=AC.createOscillator(),g=AC.createGain();o.type=t||'triangle';o.frequency.value=f;g.gain.value=.07;o.connect(g);g.connect(AC.destination);o.start();g.gain.exponentialRampToValueAtTime(.001,AC.currentTime+d);o.stop(AC.currentTime+d)}catch(e){}}
+function tr(x,y,r,k){return 'translate(-50%,-50%) translate('+x+'px,'+y+'px) rotate('+r+'deg) scale('+k+')'}
+function fl(el,st,x0,y0,dur,delay){
+  var W=st.clientWidth,H=st.clientHeight,dx=(Math.random()-.5)*W*.95,ap=-(50+Math.random()*(y0-40)),gd=H-y0+30,r=(Math.random()-.5)*900;
+  el.style.left=x0+'px';el.style.top=y0+'px';$('fly').appendChild(el);
+  var a=el.animate([{transform:tr(0,0,0,.2),opacity:0},{transform:tr(dx*.5,ap,r*.5,1.1),opacity:1,offset:.4},{transform:tr(dx,gd,r,1),opacity:1,offset:.88},{transform:tr(dx,gd,r,1),opacity:0}],{duration:dur,delay:delay,easing:'ease-out',fill:'both'});
+  a.onfinish=function(){el.remove()}}
+$('pcb').onclick=function(){
+  if(busy)return;var a=avail();if(!a.length)return;busy=true;
+  var st=$('stage'),m=$('mach'),g=$('glass'),W=st.clientWidth,H=st.clientHeight,x0=W/2,y0=H-330+62,win=pick(a);
+  $('win').innerHTML='';g.innerHTML='';m.classList.add('shake');
+  for(var i=0;i<34;i++){var k=document.createElement('span');k.textContent='🍿';k.style.left=(Math.random()*125)+'px';k.style.top=(35+Math.random()*80)+'px';g.appendChild(k);
+    k.animate([{transform:'translateY(0) scale(0)'},{transform:'translateY(-34px) scale(1.25) rotate(20deg)'},{transform:'translateY(0) scale(1)'}],{duration:450+Math.random()*450,iterations:Infinity,delay:Math.random()*1000,fill:'both'})}
+  var pi=setInterval(function(){snd(250+Math.random()*700,.1,'square')},110);
+  setTimeout(function(){
+    clearInterval(pi);m.classList.remove('shake');snd(520,.3);setTimeout(function(){snd(700,.3)},140);
+    for(var i=0;i<70;i++){var p=document.createElement('span');p.textContent='🍿';p.style.fontSize=(22+Math.random()*20)+'px';p.style.filter='hue-rotate('+Math.floor(Math.random()*360)+'deg) saturate(1.8)';fl(p,st,x0,y0,2600+Math.random()*1000,Math.random()*500)}
+    for(var j=0;j<90;j++){var c=document.createElement('div');var w=6+Math.random()*7;c.style.width=w+'px';c.style.height=(w*2)+'px';c.style.background=COL[j%7];c.style.borderRadius='2px';fl(c,st,x0,y0,2400+Math.random()*1200,Math.random()*600)}
+    var nm=all().sort(function(){return Math.random()-.5}).slice(0,14);if(nm.indexOf(win)<0)nm.push(win);
+    nm.forEach(function(t,q){var c=document.createElement('div');c.className='chip2';c.textContent=t;c.style.background=COL[q%7];fl(c,st,x0,y0,3200+Math.random()*700,Math.random()*500)});
+  },1800);
+  setTimeout(function(){
+    g.innerHTML='';var w=document.createElement('div');w.className='w';w.textContent='🎉 '+win+' 🎉';$('win').appendChild(w);
+    [523,659,784,1047].forEach(function(f,i){setTimeout(function(){snd(f,.35)},i*140)});
+    used.push(win);avail();conf();busy=false},5700);
+};
+/* ---- secret student ---- */
+var SEC=null,sst=+ls('sst')||0;
+try{SEC=JSON.parse(ls('sec')||'null')}catch(e){}
+function vis(i,v){$(i).style.display=v?'flex':'none'}
+function ssui(){
+  var o=$('ssout');o.className='big';$('sst').textContent=sst;
+  if(SEC&&!SEC.rev){o.textContent='🕵️ تم اختيار الطالب السري… والاسم سرّ!';vis('ssb1',false);vis('ssb2',true);vis('ssb3',false)}
+  else if(SEC){o.textContent='🎉 '+SEC.n;vis('ssb1',false);vis('ssb2',false);vis('ssb3',true)}
+  else{o.textContent='🕵️ لم يُختر طالب سري بعد';vis('ssb1',true);vis('ssb2',false);vis('ssb3',false)}
+}
+function ssave(){ls('sec',JSON.stringify(SEC));ls('sst',String(sst))}
+function ssend(msg){SEC=null;ssave();$('sst').textContent=sst;var o=$('ssout');o.textContent=msg;o.className='big done';vis('ssb1',true);vis('ssb2',false);vis('ssb3',false)}
+$('ssp').onclick=function(){var a=avail();if(!a.length)return;var n=pick(a);used.push(n);avail();SEC={n:n,rev:false};ssave();snd(440,.2);ssui()};
+var pk=$('ssk');
+pk.onpointerdown=function(){if(SEC&&!SEC.rev)$('ssout').textContent='👀 '+SEC.n};
+['pointerup','pointerleave','pointercancel'].forEach(function(ev){pk.addEventListener(ev,function(){if(SEC&&!SEC.rev)ssui()})});
+$('ssr').onclick=function(){
+  if(!SEC||SEC.rev)return;vis('ssb2',false);var c=3,o=$('ssout');o.className='big';o.textContent=c;snd(500,.15);
+  var iv=setInterval(function(){c--;if(c>0){o.textContent=c;snd(500,.15)}else{clearInterval(iv);SEC.rev=true;ssave();ssui();$('ssout').className='big done';[523,659,784,1047].forEach(function(f,i){setTimeout(function(){snd(f,.3)},i*130)});conf()}},900)};
+$('ssy').onclick=function(){var n=SEC.n;sst+=5;ssend('🌟 التزم '+n+'! ربح الصف 5 نجوم ⭐');[659,784,988,1319].forEach(function(f,i){setTimeout(function(){snd(f,.25)},i*110)});conf()};
+$('ssn').onclick=function(){var n=SEC.n;ssend('💪 '+n+' سيحاول مرة أخرى! والصف يتحسّن');snd(300,.3)};
+$('ssz').onclick=function(){sst=0;ssave();$('sst').textContent=0};
+ssui();
+/* ---- whiteboard ---- */
+var cv=$('wb'),cx=cv.getContext('2d'),W=$('wbw'),T={p1:{c:'#111111',z:3},p2:{c:'#2b4fd8',z:4},p3:{c:'#d9262c',z:4},hl:{c:'#ffe14d',z:26},er:{z:40}},cur='p1',shape='rc',sc='#111111',drawing=false,hist=[],redo=[],snap=null,pts=[],lx=0,ly=0,sx=0,sy=0;
+var COLS=['#111111','#d9262c','#f59e0b','#1a9a4a','#2b4fd8','#7a3cff','#e0457b','#8a5a2b'],HLC=['#ffe14d','#7dff8a','#ff9ad0','#7ad8ff'];
+var SHP=[['ln','━ خط'],['ar','➜ سهم'],['rc','▭ مستطيل'],['ci','◯ دائرة'],['tr','△ مثلث']],BGS=[['','أبيض'],['bg-g','مربعات'],['bg-d','نقاط'],['bg-l','أسطر']];
+var SYM=['+','−','×','÷','=','≠','<','>','≤','≥','½','¼','¾','²','³','√','π','°','∠','△','⊥','∥','∑','%'];
+function pos(e){var r=cv.getBoundingClientRect();return[(e.clientX-r.left)*cv.width/r.width,(e.clientY-r.top)*cv.height/r.height]}
+function save(){hist.push(cx.getImageData(0,0,cv.width,cv.height));if(hist.length>25)hist.shift();redo=[]}
+function setTool(t){cur=t;if(T[t]&&t!=='er'&&t!=='hl')sc=T[t].c;document.querySelectorAll('#bar [data-t]').forEach(function(b){if(['p1','p2','p3','hl','er','sh'].indexOf(b.dataset.t)>-1)b.classList.toggle('on',b.dataset.t===t)})}
+function fill(k){var p=$('pop');p.innerHTML='';
+  if(T[k]){var o=T[k];if(k!=='er'){var r=document.createElement('div');r.className='sw';(k==='hl'?HLC:COLS).forEach(function(c){var b=document.createElement('button');b.style.background=c;if(c===o.c)b.className='on';b.onclick=function(){o.c=c;if(k!=='hl')sc=c;var i=document.querySelector('#bar [data-t="'+k+'"] i');if(i)i.style.background=c;fill(k)};r.appendChild(b)});p.appendChild(r)}
+    var g=document.createElement('input');g.type='range';g.min=1;g.max=k==='er'?80:(k==='hl'?50:30);g.value=o.z;g.oninput=function(){o.z=+g.value};p.appendChild(g)}
+  else if(k==='sh'){SHP.forEach(function(a){var b=document.createElement('button');b.className='chip'+(shape===a[0]?' on':'');b.textContent=a[1];b.onclick=function(){shape=a[0];setTool('sh');p.style.display='none'};p.appendChild(b)})}
+  else if(k==='bg'){BGS.forEach(function(a){var b=document.createElement('button');b.className='chip';b.textContent=a[1];b.onclick=function(){W.classList.remove('bg-g','bg-d','bg-l');if(a[0])W.classList.add(a[0]);p.style.display='none'};p.appendChild(b)})}
+  else if(k==='sy'){SYM.forEach(function(a){var b=document.createElement('button');b.className='chip';b.textContent=a;b.onclick=function(){mk('tx',a);p.style.display='none'};p.appendChild(b)})}}
+function toggle(k){var p=$('pop');if(p.style.display==='block'&&p.dataset.k===k){p.style.display='none';return}p.dataset.k=k;p.style.display='block';fill(k)}
+function dragH(h,t){var o=null;h.onpointerdown=function(e){if(e.target.tagName==='BUTTON')return;h.setPointerCapture(e.pointerId);var r=t.getBoundingClientRect();o=[e.clientX-r.left,e.clientY-r.top]};h.onpointermove=function(e){if(!o)return;var w=W.getBoundingClientRect();t.style.left=(e.clientX-w.left-o[0])+'px';t.style.top=(e.clientY-w.top-o[1])+'px'};h.onpointerup=function(){o=null}}
+function mk(type,text){var d=document.createElement('div');d.className=type==='nt'?'note2':'tbox';
+  var h=document.createElement('div');h.className='hd';var x=document.createElement('button');x.textContent='✕';x.onclick=function(){d.remove()};h.appendChild(document.createTextNode(type==='nt'?'🗒️':'✥'));h.appendChild(x);
+  var b=document.createElement('div');b.className='bd';b.contentEditable='true';b.textContent=text;d.appendChild(h);d.appendChild(b);
+  if(type==='nt')d.style.background=pick(['#fff2a8','#c9f2c7','#ffd1e3','#cfe8ff']);
+  d.style.left=(40+Math.random()*180)+'px';d.style.top=(30+Math.random()*120)+'px';$('layer').appendChild(d);dragH(h,d);if(type==='nt')b.focus()}
+function shp(x,y){cx.beginPath();
+  if(shape==='ln'){cx.moveTo(sx,sy);cx.lineTo(x,y)}
+  else if(shape==='ar'){var a=Math.atan2(y-sy,x-sx),h=22;cx.moveTo(sx,sy);cx.lineTo(x,y);cx.moveTo(x,y);cx.lineTo(x-h*Math.cos(a-.4),y-h*Math.sin(a-.4));cx.moveTo(x,y);cx.lineTo(x-h*Math.cos(a+.4),y-h*Math.sin(a+.4))}
+  else if(shape==='rc')cx.rect(sx,sy,x-sx,y-sy);
+  else if(shape==='ci')cx.ellipse((sx+x)/2,(sy+y)/2,Math.abs(x-sx)/2,Math.abs(y-sy)/2,0,0,7);
+  else{cx.moveTo((sx+x)/2,sy);cx.lineTo(x,y);cx.lineTo(sx,y);cx.closePath()}
+  cx.stroke()}
+cv.onpointerdown=function(e){$('pop').style.display='none';var p=pos(e);cv.setPointerCapture(e.pointerId);save();drawing=true;sx=lx=p[0];sy=ly=p[1];pts=[p];snap=cx.getImageData(0,0,cv.width,cv.height);
+  if(cur==='sh'||cur==='hl')return;var o=T[cur];cx.globalAlpha=1;cx.lineCap=cx.lineJoin='round';cx.globalCompositeOperation=cur==='er'?'destination-out':'source-over';
+  cx.fillStyle=o.c||'#000';cx.beginPath();cx.arc(sx,sy,o.z/2,0,7);cx.fill();cx.beginPath();cx.moveTo(sx,sy)};
+cv.onpointermove=function(e){if(!drawing)return;var p=pos(e),o=T[cur];cx.lineCap=cx.lineJoin='round';
+  if(cur==='sh'){cx.putImageData(snap,0,0);cx.globalCompositeOperation='source-over';cx.globalAlpha=1;cx.strokeStyle=sc;cx.lineWidth=4;shp(p[0],p[1])}
+  else if(cur==='hl'){pts.push(p);cx.putImageData(snap,0,0);cx.globalCompositeOperation='source-over';cx.globalAlpha=.35;cx.strokeStyle=o.c;cx.lineWidth=o.z;cx.beginPath();pts.forEach(function(q,i){i?cx.lineTo(q[0],q[1]):cx.moveTo(q[0],q[1])});cx.stroke();cx.globalAlpha=1}
+  else{cx.globalCompositeOperation=cur==='er'?'destination-out':'source-over';cx.strokeStyle=o.c||'#000';cx.lineWidth=o.z;var mx=(lx+p[0])/2,my=(ly+p[1])/2;cx.quadraticCurveTo(lx,ly,mx,my);cx.stroke();cx.beginPath();cx.moveTo(mx,my);lx=p[0];ly=p[1]}};
+cv.onpointerup=cv.onpointercancel=function(){drawing=false;cx.globalCompositeOperation='source-over';cx.globalAlpha=1};
+function tog(id,b){var r=$(id);var on=r.style.display==='block';r.style.display=on?'none':'block';b.classList.toggle('on',!on)}
+$('bar').onclick=function(e){var b=e.target.closest('[data-t]');if(!b)return;var t=b.dataset.t;
+  if(T[t]){if(cur===t)toggle(t);else{$('pop').style.display='none';setTool(t)}}
+  else if(t==='sh'){setTool('sh');toggle('sh')}
+  else if(t==='bg'||t==='sy')toggle(t);
+  else if(t==='tx')mk('tx','اكتبي هنا');
+  else if(t==='nt')mk('nt','');
+  else if(t==='ru')tog('ruler',b);else if(t==='pt')tog('prot',b);
+  else if(t==='un'){var h=hist.pop();if(h){redo.push(cx.getImageData(0,0,cv.width,cv.height));cx.putImageData(h,0,0)}}
+  else if(t==='re'){var r=redo.pop();if(r){hist.push(cx.getImageData(0,0,cv.width,cv.height));cx.putImageData(r,0,0)}}
+  else if(t==='cl')clearAll();
+  else if(t==='fs'){try{document.fullscreenElement?document.exitFullscreen():W.requestFullscreen()}catch(er){}}};
+function clearAll(){save();cx.clearRect(0,0,cv.width,cv.height);$('layer').innerHTML='';$('pop').style.display='none'}
+var ca=false;$('clr2').onclick=function(){var b=$('clr2');if(!ca){ca=true;b.textContent='اضغطي للتأكيد ✔';setTimeout(function(){ca=false;b.textContent='🗑 مسح الكل'},3000);return}ca=false;b.textContent='🗑 مسح الكل';clearAll()};
+function sizeBoard(){if(hist.length||$('layer').children.length)return;var w=W.clientWidth||900,h=document.fullscreenElement?window.innerHeight:Math.max(460,Math.round(window.innerHeight*0.75)),k=1.5;cv.width=Math.round(w*k);cv.height=Math.round(h*k)}
+document.addEventListener('fullscreenchange',function(){setTimeout(sizeBoard,60)});sizeBoard();
+function dragEl(el){var d=null;el.onpointerdown=function(e){e.stopPropagation();el.setPointerCapture(e.pointerId);d=[e.clientX-el.offsetLeft,e.clientY-el.offsetTop]};el.onpointermove=function(e){if(d){el.style.left=(e.clientX-d[0])+'px';el.style.top=(e.clientY-d[1])+'px'}};el.onpointerup=function(){d=null}}
+dragEl($('ruler'));dragEl($('prot'));var rr=0;$('ruler').ondblclick=function(){rr=(rr+15)%180;$('ruler').style.transform='rotate('+rr+'deg)'};
+(function(){var q='<path d="M10 140 A130 130 0 0 1 270 140 Z" fill="#9fe3ff88" stroke="#0d1b5e" stroke-width="2"/>';
+  for(var a=0;a<=180;a+=5){var t=a*Math.PI/180,r1=a%10?120:112,x1=140-Math.cos(t)*130,y1=140-Math.sin(t)*130,x2=140-Math.cos(t)*r1,y2=140-Math.sin(t)*r1;q+='<line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="#0d1b5e"/>';
+    if(a%30===0)q+='<text x="'+(140-Math.cos(t)*96)+'" y="'+(140-Math.sin(t)*96+4)+'" font-size="11" text-anchor="middle" fill="#0d1b5e">'+a+'</text>'}
+  q+='<circle cx="140" cy="140" r="4" fill="#d9262c"/>';$('prot').innerHTML=q})();
+/* ---- AI library ---- */
+var TOOLS=[
+{n:"Claude",e:"🧠",c:"#d97757",w:"مساعد ذكاء اصطناعي من شركة Anthropic، يكتب ويحلل ويبني. هو الذي صنع معك هذا الموقع والألعاب والشهادات والبوسترات.",b:["كتابة خطط الدروس والاختبارات وأوراق العمل بالعربية الواضحة","قراءة ملفات PDF وWord والصور وتلخيصها وتحويلها إلى أوراق عمل","بناء صفحات وألعاب تفاعلية وأدوات (سبورة، عجلة، شهادات) تعمل على الجوال","إنشاء ملفات جاهزة: Word وExcel وعروض تقديمية وPDF","تعديل النص أو الشكل خطوة بخطوة حتى يعجبك"],t:"الأفضل في: الكتابة الطويلة، الألعاب التفاعلية، تنسيق الملفات، وشرح الأفكار.",x:"للتنبه: لا يولّد صورًا أو فيديوهات بنفسه في هذه المحادثة، وراجعي المعلومات قبل استخدامها، ولا تدخلي بيانات خاصة بالطلاب."},
+{n:"ChatGPT",e:"💬",c:"#10a37f",w:"مساعد محادثة من شركة OpenAI، يكتب ويلخص ويقترح أفكارًا، وقد يتيح بحسب الاشتراك توليد الصور والتحدث الصوتي.",b:["عصف ذهني سريع لأفكار الأنشطة والمسابقات","تحويل صورتك إلى شخصية كرتونية وتصميم بوسترات (كما فعلنا في بوستر الورشة)","كتابة نصوص وأناشيد وتبسيط النصوص","تحسين صياغة الرسائل وتقارير الطلاب"],t:"الأفضل في: الصور والأفكار السريعة.",x:"للتنبه: النصوص العربية داخل الصور المولّدة قد تخطئ، فراجعيها دائمًا. وتختلف الميزات بحسب الاشتراك."},
+{n:"Google Vids",e:"🎞️",c:"#4285f4",w:"أداة فيديو ضمن Google Workspace، تشبه Docs لكن للفيديو: تجمعين شرائح وصورًا وتسجيلًا وتعليقًا صوتيًا في فيديو واحد.",b:["قوالب جاهزة ومكتبة صور ومقاطع وموسيقى","تسجيل الشاشة والكاميرا وتلقين النص (Teleprompter)","تحويل شرائح العرض إلى فيديو شرح","عمل مشترك مع زميلات مثل مستندات Google"],t:"الأفضل في: دروس الشرح من الشرائح، ورسائل الترحيب، وملخصات الدروس.",x:"للتنبه: ميزات الذكاء الاصطناعي (إنشاء فيديو وصور ومقدّمين افتراضيين) تتوقف على نوع حساب Workspace والاشتراك، وبعضها قد يكون بالإنجليزية فقط، فتأكدي مما يظهر في حسابك."},
+{n:"Google Flow",e:"🎬",c:"#7a3cff",w:"أداة من Google لصناعة مشاهد فيديو بالذكاء الاصطناعي من وصف نصي أو صور، مبنية على نماذج Veo وImagen وGemini.",b:["توليد مقاطع قصيرة بجودة سينمائية من وصف المشهد","تحريك الصور الثابتة (مثل رسومات الدرس)","بناء مشاهد متتابعة بشخصيات متناسقة","تجربة أساليب مختلفة: كرتون، واقعي، ورق مقصوص"],t:"الأفضل في: المقاطع القصيرة المبهرة للتشويق أو شرح مفهوم بصريًا.",x:"للتنبه: المقاطع قصيرة (ثوانٍ)، فتُجمَّع في برنامج مونتاج أو Vids. وتختلف الباقات وحدود التوليد، فراجعي موقع Google. غالبًا تكون النتائج أدق عند كتابة وصف المشهد بالإنجليزية."}];
+var VID=[
+["🧸 كرتون ثلاثي الأبعاد","Flow / Vids","اكتبي سيناريو فيديو تعليمي مدته دقيقتان عن درس «{L}» في مادة {M} لطلاب {G}، بأسلوب رسوم متحركة ثلاثية الأبعاد بشخصيتين لطيفتين (طالب فضولي وروبوت صديق). قسّمي السيناريو إلى 6 مشاهد، ولكل مشهد: النص المنطوق، ووصف الصورة بالتفصيل (الشخصيات والمكان والألوان وحركة الكاميرا)، والمدة بالثواني. أنهي بسؤالين للتأكد من الفهم."],
+["✍️ سبورة ترسم وتشرح","Vids","حوّلي درس «{L}» ({M} – {G}) إلى فيديو بأسلوب السبورة البيضاء التي ترسم وتشرح: اكتبي النص المنطوق جملة بجملة، وبجانب كل جملة ما سيُرسم أو يُكتب على السبورة (رموز بسيطة وأسهم وألوان قليلة). المدة دقيقتان ونصف."],
+["📖 قصة قصيرة","Flow","ألّفي قصة قصيرة لطلاب {G} تشرح فكرة «{L}» في مادة {M} من خلال مغامرة (بطل وصديق ومشكلة وحل). ثم حوّليها إلى 5 مشاهد لفيديو، لكل مشهد وصف مرئي لا يزيد عن جملتين بالإنجليزية صالح لمولّد فيديو (Flow/Veo)، ومعه النص العربي المنطوق."],
+["🎵 أنشودة تعليمية","Vids","اكتبي أنشودة قصيرة مرحة (4 مقاطع، كل مقطع 4 أسطر بقافية) تساعد طلاب {G} على حفظ «{L}» في {M}، بإيقاع سهل. ثم اقترحي لكل مقطع مشهدًا مرئيًا بسيطًا يظهر في الفيديو مع الكلمات."],
+["🌍 وثائقي مبسّط","Flow","اكتبي تعليقًا صوتيًا لفيلم وثائقي قصير (دقيقة ونصف) بصوت هادئ عن «{L}» لطلاب {G}، مع لقطات سينمائية واقعية مقترحة لكل جملة (زاوية الكاميرا، الإضاءة، المكان) بالإنجليزية لتُستخدم في Flow."],
+["🧑‍🏫 مقدّمة افتراضية","Vids","اكتبي نص كلمة مباشرة لمقدّمة فيديو (مدة دقيقة) تشرح «{L}» لطلاب {G}: ترحيب، فكرة الدرس، مثالان، سؤال تفاعلي، ثم خاتمة محفزة. جمل قصيرة تناسب القراءة من التلقين (Teleprompter)."],
+["✂️ ورق مقصوص","Flow","صمّمي فيديو بأسلوب الورق المقصوص (Paper cut-out / Stop motion) يشرح «{L}» لطلاب {G}. اكتبي 5 مشاهد: النص المنطوق، ووصف بصري بالإنجليزية يوضح الخامات والألوان والحركة."],
+["🏆 برنامج مسابقات","Vids","اكتبي حلقة قصيرة من برنامج مسابقات عن «{L}» لطلاب {G}: ترحيب المذيع، 5 أسئلة متدرجة مع الإجابات والمدة لكل سؤال، ولحظات تشجيع، وخاتمة. وأضيفي ما يظهر على الشاشة مع كل سؤال."]];
+var WS=[
+["📝 ورقة عمل بثلاثة مستويات","Claude / ChatGPT","أنشئي ورقة عمل عن «{L}» ({M} – {G}) بثلاثة مستويات: (أ) تذكّر وفهم، (ب) تطبيق، (ج) تفكير وإبداع، 4 أسئلة لكل مستوى. اتركي مساحات للإجابة، وضعي مفتاح الإجابات في صفحة منفصلة."],
+["✅ اختبار قصير موضوعي","Claude / ChatGPT","أعدّي اختبارًا قصيرًا (10 أسئلة) عن «{L}» لطلاب {G} في {M}: 5 اختيار من متعدد و3 صح/خطأ و2 مقالية قصيرة، مع الدرجات ومفتاح التصحيح وجدول مواصفات يغطي الأهداف."],
+["🩹 ورقة علاجية وإثرائية","Claude / ChatGPT","أنشئي ورقتين عن «{L}»: علاجية للطلاب المتعثرين بخطوات مبسّطة وأمثلة محلولة، وإثرائية للمتميزين بمسائل تحدٍّ. لغة مناسبة للصف {G}."],
+["🃏 بطاقات أسئلة","Claude / ChatGPT","اصنعي 20 بطاقة سؤال وجواب عن «{L}» للصف {G}، بصيغة جدول (السؤال | الإجابة | المستوى)، جاهزة للطباعة والقص."],
+["🎨 نشاط وصل وتلوين","ChatGPT / Claude","اقترحي نشاط وصل وتلوين لتثبيت «{L}» لطلاب {G}، مع التعليمات والرسم المطلوب بالتفصيل، ومفتاح الإجابة."],
+["📊 سلّم تقدير (Rubric)","Claude / ChatGPT","أنشئي سلّم تقدير (Rubric) لتقييم مشروع الطلاب في «{L}» بأربعة مستويات وأربعة معايير، بلغة واضحة يفهمها الطالب."]];
+var GM=[
+["🧭 لعبة مغامرة تفاعلية (HTML)","Claude","ابني لي لعبة مغامرة تعليمية بصفحة HTML واحدة تعمل على الجوال والحاسوب، لتدريب طلاب {G} على «{L}» في {M}: قصة قصيرة وشخصية مرافقة، 8 مراحل أسئلة متدرجة، نقاط ونجوم وأصوات، وشهادة نجاح في النهاية باسم الطالب. بالعربية وألوان زاهية."],
+["👥 مسابقة فريقين","Claude / ChatGPT","صمّمي مسابقة بين فريقين عن «{L}»: 4 جولات (أسئلة سريعة، من أنا؟، صح أم خطأ، تحدّي الإبداع) مع 5 أسئلة في كل جولة والنقاط وقواعد التحكيم."],
+["🔲 بنغو تعليمي","Claude / ChatGPT","أنشئي بطاقات بنغو (4×4) عن مفردات «{L}» لطلاب {G}: 6 بطاقات مختلفة وقائمة نداء، وطريقة اللعب."],
+["🔐 غرفة الهروب الصفية","Claude / ChatGPT","صمّمي لعبة «غرفة هروب» صفية بقصة مشوّقة، 5 ألغاز مترابطة عن «{L}»، لكل لغز تلميح وإجابة، والمواد المطلوبة."],
+["🎲 ألعاب 5 دقائق","Claude / ChatGPT","اقترحي 8 ألعاب سريعة (5 دقائق) لافتتاح أو ختام حصة «{L}» دون أدوات تقريبًا، مع طريقة اللعب والهدف التعليمي."],
+["🧩 لعبة ذاكرة","Claude","ابني لعبة بطاقات ذاكرة (HTML) تطابق بين المفهوم وتعريفه في «{L}»، 12 بطاقة، مع عدّاد محاولات ونجوم."]];
+var SC=[
+["📅 خطة درس 45 دقيقة","أي أداة","اكتبي خطة درس مدتها 45 دقيقة عن «{L}» ({M} – {G}) بجدول زمني: تهيئة، عرض، نشاط، تقويم، ختام، مع الأهداف والوسائل والأنشطة المتمايزة."],
+["🎯 أهداف سلوكية","أي أداة","اكتبي 5 أهداف سلوكية قابلة للقياس لدرس «{L}» للصف {G} وفق مستويات بلوم، بصيغة «أن ...»."],
+["🧠 أسئلة تفكير عليا","أي أداة","اقترحي 8 أسئلة تفكير عليا (تحليل، تقييم، ابتكار) عن «{L}» لطلاب {G} تصلح للنقاش الصفي."],
+["🪄 تبسيط نص","أي أداة","بسّطي النص التالي ليناسب طلاب {G}، مع شرح الكلمات الصعبة وأمثلة من حياتهم: [الصقي النص هنا]"],
+["💌 رسالة لولي الأمر","أي أداة","اكتبي رسالة قصيرة ومهذبة لولي أمر الطالب عن [الموضوع]، بنبرة إيجابية وتقدير للجهد، مع اقتراح عملي واحد للمنزل."],
+["📋 تعليقات تقويم الطلاب","أي أداة","اكتبي 5 تعليقات إيجابية بنّاءة لتقرير الطالب في {M} للصف {G} عندما يكون مستواه [ممتاز/متوسط/يحتاج دعمًا]، كل تعليق جملتان، دون مقارنة بين الطلاب."],
+["⚡ نشاط افتتاحي 5 دقائق","أي أداة","اقترحي 5 أنشطة افتتاحية قصيرة تجذب انتباه طلاب {G} لدرس «{L}»."],
+["🗂 تلخيص في بطاقات","أي أداة","لخّصي درس «{L}» في 10 بطاقات مراجعة (مفهوم + مثال)، واقترحي سؤالين لكل بطاقة."]];
+var SHC=[
+["#خطة","خطة درس 45 دقيقة","#خطة | المحيط | الرابع","اكتبي خطة درس 45 دقيقة بجدول زمني (تهيئة، عرض، نشاط، تقويم، ختام) مع الأهداف والوسائل"],
+["#هدف","أهداف سلوكية","#هدف | الزوايا","اكتبي 5 أهداف سلوكية قابلة للقياس وفق بلوم بصيغة «أن ...»"],
+["#اختبار","اختبار قصير","#اختبار | المحيط | الرابع","أعدّي اختبارًا من 10 أسئلة (5 اختيار من متعدد، 3 صح/خطأ، 2 مقالية) مع الدرجات ومفتاح التصحيح"],
+["#ورقة","ورقة عمل بثلاثة مستويات","#ورقة | الضرب | الثالث","أنشئي ورقة عمل بثلاثة مستويات (تذكّر، تطبيق، تفكير) 4 أسئلة لكل مستوى مع مفتاح الإجابة"],
+["#علاج","ورقة علاجية وإثرائية","#علاج | الكسور","أنشئي ورقة علاجية بخطوات وأمثلة محلولة، وورقة إثرائية بمسائل تحدٍّ"],
+["#بطاقات","بطاقات أسئلة","#بطاقات | العلوم","اصنعي 20 بطاقة سؤال وجواب في جدول (السؤال | الإجابة | المستوى)"],
+["#لعبة","لعبة تفاعلية HTML","#لعبة | المحيط | الرابع","ابني لعبة مغامرة تعليمية بصفحة HTML واحدة تعمل على الجوال: 8 مراحل ونقاط ونجوم وأصوات وشهادة نجاح"],
+["#فيديو","سيناريو فيديو","#فيديو | الجاذبية | الخامس","اكتبي سيناريو فيديو دقيقتين من 6 مشاهد: النص المنطوق ووصف الصورة والمدة"],
+["#أنشودة","أنشودة تعليمية","#أنشودة | أيام الأسبوع","اكتبي أنشودة من 4 مقاطع بقافية سهلة الحفظ"],
+["#بسّط","تبسيط نص","#بسّط | [الصقي النص هنا]","بسّطي النص ليناسب الصف مع شرح الكلمات الصعبة وأمثلة من حياة الطلاب"],
+["#تفكير","أسئلة تفكير عليا","#تفكير | الدستور","اقترحي 8 أسئلة تفكير عليا (تحليل، تقييم، ابتكار) للنقاش"],
+["#افتتاح","أنشطة افتتاحية","#افتتاح | الزوايا","اقترحي 5 أنشطة افتتاحية قصيرة (5 دقائق) تجذب الانتباه"],
+["#لخّص","بطاقات مراجعة","#لخّص | الوحدة الأولى","لخّصي في 10 بطاقات مراجعة (مفهوم + مثال) مع سؤالين لكل بطاقة"],
+["#ولي","رسالة لولي الأمر","#ولي | تأخر في الواجبات","اكتبي رسالة قصيرة مهذبة لولي الأمر بنبرة إيجابية واقتراح عملي واحد"],
+["#تقويم","تعليقات تقرير الطالب","#تقويم | ممتاز","اكتبي 5 تعليقات إيجابية بنّاءة لتقرير الطالب، جملتان لكل تعليق ودون مقارنة بين الطلاب"]];
+var EN={"#خطة":"#plan","#هدف":"#goals","#اختبار":"#quiz","#ورقة":"#worksheet","#علاج":"#remedial","#بطاقات":"#cards","#لعبة":"#game","#فيديو":"#video","#أنشودة":"#song","#بسّط":"#simplify","#تفكير":"#think","#افتتاح":"#starter","#لخّص":"#summary","#ولي":"#parent","#تقويم":"#report"};
+var CU=[];try{CU=JSON.parse(ls("cu")||"[]")}catch(e){}
+function shl(B){
+  var all=SHC.concat(CU);
+  var tx=fv("أنا معلمة {M} للصف {G} في مدرسة بدولة الكويت. من الآن، عندما أكتب رسالة تبدأ برمز # ثم الموضوع (ويمكن أن أضيف الصف بعده)، ويمكن أن يكون الرمز بالعربية أو بالإنجليزية، نفّذي فورًا ما يقابله في القائمة التالية دون أسئلة إضافية، بلغة عربية مبسطة تناسب أعمار الطلاب وبتنسيق منظم. إن لم أذكر الصف فاستخدمي صف {G}. اختمي كل رد بعبارة «تم ✅».\n\n")+all.map(function(a){return a[0]+(EN[a[0]]?" أو "+EN[a[0]]:"")+" = "+a[3]}).join("\n");
+  var c0=mkc("💡 ما فكرة الاختصارات؟");para(c0,"بدل أن تكتبي أمرًا طويلًا في كل مرة، تعرّفين الذكاء الاصطناعي على اختصاراتك مرة واحدة، ثم تكتبين الرمز والموضوع فقط. مثال: ‏#اختبار | المحيط | الرابع أو ‏#quiz | المحيط | الرابع ← يعطيك اختبارًا كاملًا جاهزًا. لكل رمز عربي مقابل إنجليزي، فاستخدمي ما يسهل عليك كتابته.");B.appendChild(c0);
+  var c1=mkc("1️⃣ الصقي هذا البرومبت مرة واحدة في بداية المحادثة");var d=document.createElement("div");d.className="ptxt";d.textContent=tx;c1.appendChild(d);var b=document.createElement("button");b.className="btn s";b.textContent="📋 نسخ البرومبت";b.onclick=function(){cp(tx,b)};c1.appendChild(b);para(c1,"يعمل داخل نفس المحادثة. وفي البرامج التي تتيح «تعليمات مخصصة» أو «مشروعًا» يمكنك وضعه هناك ليبقى معك دائمًا.","color:var(--mut);font-size:13px;margin-top:8px");B.appendChild(c1);
+  var c2=mkc("2️⃣ ثم اكتبي الاختصار فقط");all.forEach(function(a,i){var r=document.createElement("div");r.className="res";r.style.display="block";var t=document.createElement("div");t.style.cssText="font-weight:900;color:var(--pri)";t.textContent=a[0]+(EN[a[0]]?"  /  "+EN[a[0]]:"")+"  —  "+a[1];var e=document.createElement("div");e.style.cssText="direction:rtl;color:var(--mut);font-size:14px";e.textContent="مثال: "+a[2]+(EN[a[0]]?"   أو   "+a[2].replace(a[0],EN[a[0]]):"");r.appendChild(t);r.appendChild(e);if(i>=SHC.length){var x=document.createElement("button");x.className="x";x.textContent="✕ حذف";x.onclick=function(){CU.splice(i-SHC.length,1);ls("cu",JSON.stringify(CU));libr()};r.appendChild(x)}c2.appendChild(r)});B.appendChild(c2);
+  var c3=mkc("➕ اصنعي اختصارك الخاص");var rw=document.createElement("div");rw.className="row";var ic=document.createElement("input");ic.type="text";ic.placeholder="الرمز (مثال: #مراجعة)";ic.style.flex="1 1 140px";var ii=document.createElement("input");ii.type="text";ii.placeholder="ماذا تريدين أن ينفّذ؟ (مثال: اكتبي 5 أسئلة مراجعة سريعة)";ii.style.flex="2 1 240px";var ab=document.createElement("button");ab.className="btn s";ab.textContent="➕ إضافة";
+  ab.onclick=function(){var k=ic.value.trim(),v=ii.value.trim();if(!k||!v)return;if(k.charAt(0)!=="#")k="#"+k;CU.push([k,"اختصار خاص",k+" | الموضوع",v]);ls("cu",JSON.stringify(CU));libr()};
+  rw.appendChild(ic);rw.appendChild(ii);rw.appendChild(ab);c3.appendChild(rw);para(c3,"بعد الإضافة يتحدّث البرومبت في الأعلى تلقائيًا، فانسخيه من جديد.","color:var(--mut);font-size:13px");B.appendChild(c3)}
+var LT=[["tl","🧰 الأدوات"],["vid","🎬 فيديو"],["ws","📄 أوراق العمل"],["gm","🎮 ألعاب"],["sc","⚡ برومبتات سريعة"],["sh","🔤 دليل الاختصارات"]],LD={vid:VID,ws:WS,gm:GM,sc:SC},ltab="tl";
+function fv(t){return t.replace(/\{M\}/g,$("vM").value.trim()||"[المادة]").replace(/\{G\}/g,$("vG").value.trim()||"[الصف]").replace(/\{L\}/g,$("vL").value.trim()||"[عنوان الدرس]")}
+function flash(b){var o=b.textContent;b.textContent="✔ تم النسخ";setTimeout(function(){b.textContent=o},1500)}
+function cp(t,b){function fb(){var a=document.createElement("textarea");a.value=t;a.style.cssText="position:fixed;opacity:0";document.body.appendChild(a);a.select();try{document.execCommand("copy");flash(b)}catch(e){}a.remove()}
+  try{navigator.clipboard.writeText(t).then(function(){flash(b)}).catch(fb)}catch(e){fb()}}
+function mkc(h){var c=document.createElement("div");c.className="card";if(h){var t=document.createElement("h2");t.textContent=h;c.appendChild(t)}return c}
+function para(c,t,st){var p=document.createElement("div");p.textContent=t;if(st)p.style.cssText=st;c.appendChild(p)}
+function libr(){var B=$("lb");B.innerHTML="";
+  document.querySelectorAll("#lt button").forEach(function(b){b.classList.toggle("on",b.dataset.k===ltab)});
+  if(ltab==="tl"){
+    TOOLS.forEach(function(o){var c=mkc(o.e+" "+o.n);c.style.borderColor=o.c;para(c,o.w);var u=document.createElement("ul");u.className="ul";o.b.forEach(function(x){var l=document.createElement("li");l.textContent=x;u.appendChild(l)});c.appendChild(u);para(c,"⭐ "+o.t,"font-weight:700");para(c,"⚠️ "+o.x,"color:var(--mut);font-size:14px;margin-top:6px");B.appendChild(c)});
+    var f=mkc("🔗 طريقة العمل المتكاملة لصنع فيديو تعليمي");var u2=document.createElement("ol");u2.className="ul";["اطلبي من Claude أو ChatGPT كتابة السيناريو من تبويب «فيديو».","انسخي وصف كل مشهد إلى Flow ليولّد المقطع، أو اجمعي الصور والشرائح في Vids.","أضيفي التعليق الصوتي والموسيقى والعناوين في Vids.","راجعي المعلومات واللغة قبل العرض على الطلاب."].forEach(function(x){var l=document.createElement("li");l.textContent=x;u2.appendChild(l)});f.appendChild(u2);B.appendChild(f);
+    var g=mkc("✨ صيغة البرومبت الذهبية");para(g,"الدور + السياق + المهمة + الشكل المطلوب + القيود");var ex=document.createElement("div");ex.className="ptxt";ex.textContent="أنتِ معلمة خبيرة (الدور). أحضّر درس المحيط لطلاب الصف الرابع (السياق). اكتبي 5 مسائل متدرجة (المهمة) في جدول من عمودين: المسألة والحل (الشكل)، بلغة بسيطة وأرقام صغيرة (القيود).";g.appendChild(ex);B.appendChild(g)}
+  else if(ltab==="sh")shl(B);else{var L=LD[ltab];
+    if(ltab==="vid")para(B,"💡 ضعي بيانات الدرس في الأعلى ثم اضغطي «نسخ» والصقي البرومبت في الأداة المقترحة. لمولّدات الفيديو (Flow) جرّبي وصف المشاهد بالإنجليزية.","color:var(--mut);margin-bottom:8px");
+    L.forEach(function(o){var c=mkc(o[0]);var tg=document.createElement("span");tg.className="tg";tg.textContent=o[1];c.firstChild.appendChild(tg);var tx=fv(o[2]);var d=document.createElement("div");d.className="ptxt";d.textContent=tx;c.appendChild(d);var b=document.createElement("button");b.className="btn s";b.textContent="📋 نسخ البرومبت";b.onclick=function(){cp(tx,b)};c.appendChild(b);B.appendChild(c)})}}
+LT.forEach(function(a){var b=document.createElement("button");b.dataset.k=a[0];b.textContent=a[1];b.onclick=function(){ltab=a[0];libr()};$("lt").appendChild(b)});
+["vM","vG","vL"].forEach(function(i){$(i).oninput=libr});libr();
+/* ---- subjects & grades ---- */
+var SUB=[['اللغة العربية','📖','#d9262c'],['الرياضيات','➗','#2b4fd8'],['اللغة الإنجليزية','🔤','#7a3cff'],['الاجتماعيات','🌍','#0e9aa7'],['العلوم','🔬','#1a9a4a'],['التربية البدنية','⚽','#f59e0b'],['التربية الفنية','🎨','#e0457b'],['القرآن الكريم','🕌','#0d6b4a'],['التربية الإسلامية','🌙','#5a3cb0']];
+var GR=['الصف الأول','الصف الثاني','الصف الثالث','الصف الرابع','الصف الخامس'],GC=['#d9262c','#f59e0b','#1a9a4a','#2b4fd8','#7a3cff'],GE=['1️⃣','2️⃣','3️⃣','4️⃣','5️⃣'];
+var R={};try{R=JSON.parse(ls('res')||'{}')}catch(e){}
+var DEF={'2|3':[{t:'Skyline English 4A — كتاب الطالب (الطبعة 2026–2027)',u:'https://elibrary.moe.edu.kw/api/File/preview/book/3681'}],'3|3':[{t:'توزيع منهج وطني الكويت — الفصل الأول 2026/2027',u:'https://elibrary.moe.edu.kw/api/File/preview/book/4853'}]};
+var UNC=[{t:'كتاب — رابط 4909',u:'https://elibrary.moe.edu.kw/api/File/preview/book/4909'},{t:'كتاب — رابط 3620',u:'https://elibrary.moe.edu.kw/api/File/preview/book/3620'},{t:'كتاب — رابط 3658',u:'https://elibrary.moe.edu.kw/api/File/preview/book/3658'}];
+Object.keys(DEF).forEach(function(k){var L=R[k]=R[k]||[];DEF[k].forEach(function(o){if(!L.some(function(x){return x.u===o.u}))L.push(o)})});
+function unc(){var b=$('unc');UNC.forEach(function(o){var d=document.createElement('div');d.className='res';var a=document.createElement('a');a.href=o.u;a.target='_blank';a.rel='noopener';a.textContent=o.t;d.appendChild(a);b.appendChild(d)})}
+unc();
+var cs=0,cg=0;
+function tiles(box,arr,fn){arr.forEach(function(a,i){var b=document.createElement('button');b.className='tile';b.style.background=a[2];b.innerHTML='<span>'+a[1]+'</span>';b.appendChild(document.createTextNode(a[0]));b.onclick=function(){fn(i)};$(box).appendChild(b)})}
+function panel(id){var p=$(id);p.innerHTML='';var c=document.createElement('div');c.className='card';c.style.marginTop='14px';
+  var h=document.createElement('h2');h.textContent=SUB[cs][1]+' '+SUB[cs][0]+' — '+GR[cg];c.appendChild(h);
+  var r1=document.createElement('div');r1.className='row';SUB.forEach(function(s,i){var b=document.createElement('button');b.className='chip'+(i===cs?' on':'');b.textContent=s[0];b.onclick=function(){cs=i;panel(id)};r1.appendChild(b)});c.appendChild(r1);
+  var r2=document.createElement('div');r2.className='row';GR.forEach(function(g,i){var b=document.createElement('button');b.className='chip'+(i===cg?' on':'');b.textContent=g;b.onclick=function(){cg=i;panel(id)};r2.appendChild(b)});c.appendChild(r2);
+  var k=cs+'|'+cg,L=R[k]||[];
+  if(!L.length){var e=document.createElement('div');e.style.color='var(--mut)';e.textContent='لا توجد مواد مضافة بعد. أضيفي رابطًا أو ملاحظة من الأسفل.';c.appendChild(e)}
+  L.forEach(function(o,i){var d=document.createElement('div');d.className='res';var t;if(/^https?:\/\//.test(o.u)){t=document.createElement('a');t.href=o.u;t.target='_blank';t.rel='noopener';t.textContent=o.t||o.u}else{t=document.createElement('span');t.textContent=o.t||o.u}
+    var x=document.createElement('button');x.className='x';x.textContent='✕';x.onclick=function(){L.splice(i,1);R[k]=L;ls('res',JSON.stringify(R));panel(id)};d.appendChild(t);d.appendChild(x);c.appendChild(d)});
+  var f=document.createElement('div');f.className='row';var ti=document.createElement('input');ti.type='text';ti.placeholder='العنوان (مثال: ورقة عمل المحيط)';ti.style.flex='1 1 180px';var ui=document.createElement('input');ui.type='text';ui.placeholder='الرابط (اختياري)';ui.style.flex='1 1 180px';ui.dir='ltr';
+  var ab=document.createElement('button');ab.className='btn s';ab.textContent='➕ إضافة';ab.onclick=function(){if(!ti.value.trim()&&!ui.value.trim())return;L.push({t:ti.value.trim(),u:ui.value.trim()});R[k]=L;ls('res',JSON.stringify(R));panel(id)};
+  f.appendChild(ti);f.appendChild(ui);f.appendChild(ab);c.appendChild(f);p.appendChild(c);p.scrollIntoView({behavior:'smooth',block:'nearest'})}
+tiles('sg',SUB,function(i){cs=i;panel('sp')});
+tiles('gg',GR.map(function(g,i){return[g,GE[i],GC[i]]}),function(i){cg=i;panel('gp')});
+avail();
+</script>
+</body>
+</html>
